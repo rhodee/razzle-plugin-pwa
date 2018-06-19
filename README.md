@@ -12,7 +12,7 @@ Example options for each plugin can be found inside of [testdata]('testdata'). O
 ```javascript
   // razzle.config.js
 
-  const modifyBuilder = require('razzle-plugin-pwa')
+  const modifyBuilder = require('razzle-plugin-pwa').default
 
   const workboxConfig = {
     swDest: 'sw.js',
@@ -70,7 +70,7 @@ Example options for each plugin can be found inside of [testdata]('testdata'). O
   const modify = modifyBuilder({ workboxConfig, pwaConfig })
 
   module.exports = {
-    plugins: [modify]
+    plugins: [{ func: modify }]
   }
 ```
 
