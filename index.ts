@@ -1,5 +1,5 @@
 import * as wp from 'webpack';
-import WebpackPwaManifest from 'webpack-pwa-manifest';
+import * as WebpackPwaManifest from 'webpack-pwa-manifest';
 import * as WorkboxPlugin from 'workbox-webpack-plugin';
 
 const { InjectManifest } = WorkboxPlugin;
