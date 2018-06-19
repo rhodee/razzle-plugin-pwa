@@ -11,20 +11,19 @@ Example options for each plugin can be found inside of [testdata]('testdata'). O
 
 ```javascript
   // razzle.config.js
-
   const modifyBuilder = require('razzle-plugin-pwa').default
 
-  const workboxConfig = {
+  const pwaConfig = {
     swDest: 'sw.js',
     clientsClaim: true,
     skipWaiting: true,
     runtimeCaching: [{
-      urlPattern: new RegExp('https://www.mysite.co'),
-      handler: 'networkFirst'
+        urlPattern: new RegExp('https://www.mysite.co'),
+        handler: 'networkFirst'
     }]
   }
 
-  const pwaConfig = {
+  const manifestConfig = {
     filename: 'manifest.json',
     name: 'Razzle App',
     short_name: 'Razzle',
@@ -32,9 +31,6 @@ Example options for each plugin can be found inside of [testdata]('testdata'). O
     orientation: 'portrait',
     display: 'fullscreen',
     start_url: '.',
-    ios: true,
-    inject: false,
-    fingerprints: false,
     theme_color: '#ffffff',
     background_color: '#ffffff',
     related_applications: [],
@@ -67,7 +63,7 @@ Example options for each plugin can be found inside of [testdata]('testdata'). O
     ]
   }
 
-  const modify = modifyBuilder({ workboxConfig, pwaConfig })
+  const modify = modifyBuilder({ pwaConfig, manifestConfig })
 
   module.exports = {
     plugins: [{ func: modify }]

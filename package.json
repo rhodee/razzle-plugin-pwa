@@ -1,6 +1,6 @@
 {
   "name": "razzle-plugin-pwa",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "description": "Create Progressive Web App with Razzle",
   "main": "dist/index.js",
   "repository": "git@github.com:rhodee/razzle-plugin-pwa.git",
