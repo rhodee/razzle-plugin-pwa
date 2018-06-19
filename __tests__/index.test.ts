@@ -2,8 +2,7 @@ import modify from '../index';
 import { manifestConfig } from '../testdata/manifestConfig';
 import { pwaConfig } from '../testdata/pwaConfig';
 
-/*tslint:disable:no-submodule-imports*/
-/*tslint:disable:no-var-requires*/
+/*tslint:disable-next-line:no-var-requires no-submodule-imports*/
 const createConfig = require('razzle/config/createConfig');
 
 describe('razzle-plugin-pwa', () => {
