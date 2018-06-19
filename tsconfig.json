@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "module": "esnext",
+    "module": "commonjs",
     "importHelpers": true,
     "moduleResolution": "node",
     "lib": [
