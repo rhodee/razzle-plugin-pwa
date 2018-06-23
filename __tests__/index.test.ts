@@ -9,7 +9,7 @@ describe('razzle-plugin-pwa', () => {
   describe('with pwa', () => {
     it('has sane defaults provided for PWA provided', () => {
       const pluginFunc = modify({ pwaConfig });
-      const config = createConfig('node', 'dev', {
+      const config = createConfig('web', 'dev', {
         plugins: [{ func: pluginFunc, options: { useBabel: false } }]
       });
       const p = config.plugins[config.plugins.length - 1];
@@ -23,39 +23,25 @@ describe('razzle-plugin-pwa', () => {
   describe('with offline', () => {
     it('appends the plugin when a manifest for offline provided', () => {
       const pluginFunc = modify({ manifestConfig });
-      const config = createConfig('node', 'dev', {
+      const config = createConfig('web', 'dev', {
         plugins: [{ func: pluginFunc, options: { useBabel: false } }]
       });
       const p = config.plugins[config.plugins.length - 1];
 
-      expect(Object.getOwnPropertyNames(p)).toEqual(
-        expect.arrayContaining([
-          '_generator',
-          'assets',
-          'htmlPlugin',
-          'options'
-        ])
-      );
+      expect(p.options).toEqual(expect.objectContaining(manifestConfig));
     });
   });
 
   describe('with both', () => {
     it('appends the plugins for web manifest and service worker', () => {
       const pluginFunc = modify({ manifestConfig, pwaConfig });
-      const config = createConfig('node', 'dev', {
+      const config = createConfig('web', 'dev', {
         plugins: [{ func: pluginFunc, options: { useBabel: false } }]
       });
       const mp = config.plugins[config.plugins.length - 2];
       const pwap = config.plugins[config.plugins.length - 1];
 
-      expect(Object.getOwnPropertyNames(mp)).toEqual(
-        expect.arrayContaining([
-          '_generator',
-          'assets',
-          'htmlPlugin',
-          'options'
-        ])
-      );
+      expect(mp.options).toEqual(expect.objectContaining(manifestConfig));
       expect(Object.getOwnPropertyNames(pwap)).toEqual(
         expect.arrayContaining(['config'])
       );
