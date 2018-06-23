@@ -115,7 +115,7 @@ export default (pluginConfig: IModifyConfigOption): IRazzleModifyFunc => {
     userOptions = {}
   ) => {
     const config = { ...baseConfig };
-    if (target === 'node') {
+    if (target === 'web') {
       const { manifestConfig, pwaConfig } = pluginConfig;
       if (manifestConfig) {
         config &&
