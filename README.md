@@ -3,7 +3,7 @@
 [![CircleCI](https://circleci.com/gh/rhodee/razzle-plugin-pwa/tree/master.svg?style=shield)](https://circleci.com/gh/rhodee/razzle-plugin-pwa/tree/master)
 ![Razzle-status](https://david-dm.org/rhodee/razzle-plugin-pwa.svg?path=packages/razzle-plugin-pwa) [![npm version](https://badge.fury.io/js/razzle-plugin-pwa.svg)](https://badge.fury.io/js/razzle) [![Known Vulnerabilities](https://snyk.io/test/npm/razzle-plugin-pwa/badge.svg)](https://snyk.io/test/npm/razzle-plugin-pwa)
 
-A [Razzle](https://github.com/jaredpalmer/razzle) 2.x [plugin](https://github.com/jaredpalmer/razzle/tree/master/packages) for generating configuraable progressive web applications and web application manifests.
+A [Razzle](https://github.com/jaredpalmer/razzle) 2.x [plugin](https://github.com/jaredpalmer/razzle/tree/master/packages) for generating configurable progressive web applications and web application manifests.
 
 ## Usage
 
